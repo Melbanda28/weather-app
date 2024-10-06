@@ -67,11 +67,11 @@ export default function Weather(props) {
           coordinates={weatherData.coordinates}
           city={weatherData.city}
         />
-        
+
         <footer>
           This was coded by
           <a
-            href="https://github.com/Melbanda28"
+            href="https://www.shecodes.io/graduates/123422-mellania-banda"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -79,7 +79,7 @@ export default function Weather(props) {
           </a>
           , code hosted on
           <a
-            href="https://github.com/Melbanda28/Weather-React"
+            href="https://github.com/Melbanda28/weather-app"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -87,7 +87,7 @@ export default function Weather(props) {
           </a>
           and website hosted on
           <a
-            href="https://imozuluapp.netlify.app"
+            href="https://weather-namhlanje.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
