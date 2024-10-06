@@ -67,6 +67,7 @@ export default function Weather(props) {
           coordinates={weatherData.coordinates}
           city={weatherData.city}
         />
+        
         <footer>
           This was coded by
           <a
@@ -78,7 +79,7 @@ export default function Weather(props) {
           </a>
           , code hosted on
           <a
-            href="https://github.com/Melbanda28/Imozulu"
+            href="https://github.com/Melbanda28/Weather-React"
             target="_blank"
             rel="noopener noreferrer"
           >
