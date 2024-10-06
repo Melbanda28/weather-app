@@ -33,9 +33,9 @@ export default function Weather(props) {
   }
 
   function search() {
-    let apiKey = "e144f0cf51fa43f03431f0488a36728";
-   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
+   
+ let apiKey = "0a266418598ob604ae10378et2402a5f";
+ let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
   }
 
@@ -43,13 +43,6 @@ export default function Weather(props) {
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <a
-          href="https://www.shecodes.io/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/images/logo.png" className="logo" alt="SheCodes Logo" />
-        </a>
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9 ">
@@ -75,21 +68,30 @@ export default function Weather(props) {
           city={weatherData.city}
         />
         <footer>
-          This project was coded by{" "}
+          This was coded by
           <a
-            href="https://www.shecodes.io/"
+            href="https://github.com/Melbanda28"
             target="_blank"
             rel="noopener noreferrer"
           >
-            SheCodes
-          </a>{" "}
-          and is{" "}
-          <a href="" target="_blank" rel="noopener noreferrer">
-            open-sourced on GitHub
-          </a>{" "}
-          and{" "}
-          <a href="" target="_blank" rel="noopener noreferrer">
-            hosted on Netlify
+            Mellania Banda
+          </a>
+          , code hosted on
+          <a
+            href="https://github.com/Melbanda28/Imozulu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Git Hub
+          </a>
+          and website hosted on
+          <a
+            href="https://imozuluapp.netlify.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Netlify
           </a>
         </footer>
       </div>

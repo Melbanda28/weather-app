@@ -19,7 +19,7 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="WeatherForecast row">
-        {forecast.map(function (day, index) {
+        {forecast.map(function(day, index) {
           if (index < 5) {
             return (
               <div className="col" key={index}>
@@ -33,8 +33,8 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    let apiKey = "e144f0cf51fa43f03431f0488a36728";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=${apiKey}&units=metric`;
+     let apiKey = "0a266418598ob604ae10378et2402a5f";
+     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.city}&key=${apiKey}`;
     axios.get(apiUrl).then(handleForecastResponse);
 
     return null;
