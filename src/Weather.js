@@ -4,22 +4,24 @@ import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 import "./Weather.css";
+import WeatherForecastPreview from "./WeatherForecastPreview";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
 
-  function handleResponse(response) {
+ function handleResponse(response) {
+    console.log(response.data.coord)
     setWeatherData({
       ready: true,
-      coordinates: response.data.coordinates,
+      coordinates: response.data.coord,
       temperature: response.data.temperature.current,
       humidity: response.data.temperature.humidity,
       date: new Date(response.data.time * 1000),
       description: response.data.condition.description,
       icon: response.data.condition.icon,
       wind: response.data.wind.speed,
-      city: response.data.city,
+      city: response.data.name,
     });
   }
 
@@ -35,7 +37,8 @@ export default function Weather(props) {
   function search() {
    
  let apiKey = "0a266418598ob604ae10378et2402a5f";
- let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+ let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+ console.log(apiUrl);
     axios.get(apiUrl).then(handleResponse);
   }
 

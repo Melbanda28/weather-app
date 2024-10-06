@@ -19,7 +19,7 @@ export default function WeatherForecast(props) {
   if (loaded) {
     return (
       <div className="WeatherForecast row">
-        {forecast && forecast.map(function(day, index) {
+        { forecast.map(function(day, index) {
           if (index < 5) {
             return (
               <div className="col" key={index}>
@@ -34,7 +34,7 @@ export default function WeatherForecast(props) {
     );
   } else {
      let apiKey = "0a266418598ob604ae10378et2402a5f";
-     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.city}&key=${apiKey}`;
+      let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${props.city}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleForecastResponse);
 
     return null;
